@@ -1,5 +1,7 @@
 # Полезные скрипты для управления образами и контейнерами Docker
 
+## Массовое удаление с фильтрацией
+
 Имеется несколько образов
 
 `docker image ls `
@@ -14,13 +16,13 @@ hello-world              latest    feb5d9fea6a5   15 months ago   13.3kB
 centos                   latest    5d0da3dc9764   15 months ago   231MB
 </pre>
 
-Нам необходимо отфильтровать и удалить все кроме двух ubuntu, hello-world 
+Нам необходимо отфильтровать и удалить все кроме двух ubuntu и одного hello-world. 
 
-отфильтровать мы можем так:
+Отфильтровать мы можем так:
 
 `docker images --format '{{.Repository}}:{{.Tag}}' | grep 'imagename'`
 
-или проще вывести все кроме: 
+или проще вывести все "кроме" через grep -v: 
 
 `docker images | grep -vE 'ubuntu|hello'`   
 
