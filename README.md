@@ -35,6 +35,8 @@ feb5d9fea6a5
 5d0da3dc9764
 </pre>
 
+[Подробнее про фильтры] (https://docs.docker.com/engine/reference/commandline/images/#filtering)
+
 Но нужны не все, поэтому проще вывести все "кроме" через grep -v: 
 
 `docker images | grep -vE 'ubuntu|hello'`   
