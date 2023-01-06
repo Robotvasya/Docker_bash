@@ -24,7 +24,7 @@ centos                   latest    5d0da3dc9764   15 months ago   231MB
 
 или
 
-`docker images --format {{.ID}}`
+`docker images --format '{{.ID}}'`
 
 <pre>
 dc63a1c89b75
