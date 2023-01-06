@@ -22,7 +22,20 @@ centos                   latest    5d0da3dc9764   15 months ago   231MB
 
 `docker images --format '{{.Repository}}:{{.Tag}}' | grep 'imagename'`
 
-или проще вывести все "кроме" через grep -v: 
+или
+
+`docker images --format {{.ID}}`
+
+<pre>
+dc63a1c89b75
+9789029c7a65
+6b7dfa7e8fdb
+6b7dfa7e8fdb
+feb5d9fea6a5
+5d0da3dc9764
+</pre>
+
+Но нужны не все, поэтому проще вывести все "кроме" через grep -v: 
 
 `docker images | grep -vE 'ubuntu|hello'`   
 
