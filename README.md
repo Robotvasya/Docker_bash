@@ -37,7 +37,11 @@ feb5d9fea6a5
 
 [Подробнее про фильтры](https://docs.docker.com/engine/reference/commandline/images/#filtering)
 
-Но нужны не все, поэтому проще вывести все "кроме" через grep -v: 
+Но нужны не все образы, а все КРОМЕ, поэтому можно пытаться писать в стиле Golang templates, но это слишком сложно:
+
+`docker images --format '{{- if and (ne .Repository "ubuntu") (ne .Repository "hello-world") -}}{{- .ID -}}{{- else -}}{{- end -}}' | grep  '.'`
+
+Поэтому проще вывести все "кроме" через grep -v: 
 
 `docker images | grep -vE 'ubuntu|hello'`   
 
